@@ -15,15 +15,32 @@ export const TodoItem = ({ item }) => {
     setTodoList(newList);
   };
 
+  const handleTodoCompletion = () => {
+    const newList = replaceItemAtIndex(todoList, index, {
+      ...item,
+      isComplete: !item.isComplete,
+    });
+    setTodoList(newList);
+  };
+
+  const handleTodoDelete = () => {
+    const newList = removeItemAtIndex(todoList, index);
+    setTodoList(newList);
+  };
+
   return (
     <div>
       <input type='text' value={item.text} onChange={editItemText} />
-      <input />
-      <button>X</button>
+      <input type='checkbox' checked={item.isComplete} onChange={handleTodoCompletion} />
+      <button onClick={handleTodoDelete}>X</button>
     </div>
   );
 };
 
 const replaceItemAtIndex = (todoList, index, newValue) => {
   return [...todoList.slice(0, index), newValue, ...todoList.slice(index + 1)];
+};
+
+const removeItemAtIndex = (todoList, index) => {
+  return [...todoList.slice(0, index), ...todoList.slice(index + 1)];
 };
