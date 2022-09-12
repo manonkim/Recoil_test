@@ -16,7 +16,7 @@ export const TodoitemCreator = () => {
       {
         id: getId(),
         text: inputValue,
-        inComplete: false,
+        isComplete: false,
       },
     ]);
   };
@@ -30,6 +30,6 @@ export const TodoitemCreator = () => {
 };
 
 let id = 0;
-const getId = () => {
+function getId() {
   return id++;
-};
+}
