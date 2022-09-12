@@ -1,11 +1,11 @@
 import React from 'react';
 import { RecoilRoot } from 'recoil';
-import CahracterCounter from './CharacterCounter';
+import { TodoList } from './components/TodoList';
 
 const App = () => {
   return (
     <RecoilRoot>
-      <CahracterCounter />
+      <TodoList />
     </RecoilRoot>
   );
 };
