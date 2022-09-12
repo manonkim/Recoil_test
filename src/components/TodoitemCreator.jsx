@@ -21,15 +21,15 @@ export const TodoitemCreator = () => {
     ]);
   };
 
-  let id = 0;
-  const getId = () => {
-    return id++;
-  };
-
   return (
     <div>
       <input type='text' value={inputValue} onChange={handleInputChange} />
       <button onClick={addItem}>Add</button>
     </div>
   );
+};
+
+let id = 0;
+const getId = () => {
+  return id++;
 };
